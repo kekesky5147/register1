@@ -58,7 +58,17 @@ const Register = () => {
     setErrMsg('')
   }, [user, pwd, matchPwd])
 
-  return <div></div>
+  return (
+    <section>
+      <p
+        ref={errRef}
+        className={errMsg ? 'errmsg' : 'offscreen'}
+        aria-live='assertive'
+      >
+        {errMsg}
+      </p>
+    </section>
+  )
 }
 
 export default Register
