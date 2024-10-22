@@ -60,6 +60,7 @@ const Register = () => {
 
   return (
     <section>
+      {/* 오류 메세지가 존재하면 삼항 문을 사용해서 표시할 클래스 오류 메세지 전달, 그렇지 않을 경우 전체를 가져오는 클래스 오프스크린을 적용  */}
       <p
         ref={errRef}
         className={errMsg ? 'errmsg' : 'offscreen'}
@@ -67,6 +68,22 @@ const Register = () => {
       >
         {errMsg}
       </p>
+      <h1>Register</h1>
+      <form>
+        <label htmlFor='username'>Username:</label>
+        <input
+          type='text'
+          id='username'
+          ref={userRef}
+          autoComplete='off'
+          onChange={e => setUser(e.target.value)}
+          required
+          aria-invalid={validName ? 'false' : 'true'}
+          aria-describedby='uidnote'
+          onFocus={() => setUserFocus(true)}
+          onBlur={() => setUserFocus(false)}
+        />
+      </form>
     </section>
   )
 }
