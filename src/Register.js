@@ -72,7 +72,9 @@ const Register = () => {
       <form>
         <label htmlFor='username'>
           Username:
-          <span className={validName ? 'valid' : 'hide'}></span>
+          <span className={validName ? 'valid' : 'hide'}>
+            <FontAwesomeIcon icon={faCheck} />
+          </span>
           <span className={validName || !user ? 'hide' : 'invalid'}>
             <FontAwesomeIcon icon={faTimes} />
           </span>
