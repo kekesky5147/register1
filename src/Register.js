@@ -83,6 +83,19 @@ const Register = () => {
           onFocus={() => setUserFocus(true)}
           onBlur={() => setUserFocus(false)}
         />
+
+        <p
+          id='uidnote'
+          className={
+            userFocus && user && !validName ? 'instructions' : 'offscreen'
+          }
+        >
+          <FontAwesomeIcon icon={faInfoCircle} />
+          4 to 24 characters.
+          <br />
+          must begin with a letter. <br />
+          Letters, numbers, underscores, hyphens allowed.
+        </p>
       </form>
     </section>
   )
